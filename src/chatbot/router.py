@@ -1,9 +1,16 @@
 from fastapi import APIRouter
 
+from .services import query_llm
+from .config import model
+
 router = APIRouter(
     prefix='/chatbot',
 )
 
-@router.get('/home/')
-def home_test():
-    return {"Home":"Get Successful"}
+@router.post('/message/')
+def query_chatbot(message:str):
+    response = query_llm(model,message)
+    return {"response":response}
+
+
+
