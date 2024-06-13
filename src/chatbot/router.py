@@ -1,4 +1,5 @@
 from fastapi import APIRouter
+from fastapi import Request
 
 from .services import query_llm
 from .config import model
@@ -8,7 +9,9 @@ router = APIRouter(
 )
 
 @router.post('/message/')
-def query_chatbot(message:str):
+async def query_chatbot(request:Request):
+    form_data = await request.form()
+    message = form_data.get('message')
     response = query_llm(model,message)
     return {"response":response}
 

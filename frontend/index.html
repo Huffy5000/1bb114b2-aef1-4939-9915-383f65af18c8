@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoCo Assistant</title>
+    <link type="text/css" href="./static/css/stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <main class="main-container">
+        <div id = 'chatbot-closed-wrapper' class="closed">
+            <button id="chatbot-collapse-button">
+                <img class="chatbot-collapse-image" src="./static/images/technical-support.png">
+            </button>
+        </div>
+
+        <div id = 'chatbot-open-wrapper' class="open hidden">
+            <div class="chatbot-header">
+                <div class="chatbot-logo">
+                    <img class="chatbot-profile-image" src="static/images/technical-support.png">
+                </div>
+                <div class="chatbot-info">
+                    <h1>DemoCo Assistant</h1>
+                    <h3 class="chatbot-status">Online</h3>
+                </div>
+                <div class="chatbot-close">
+                    <button class="chatbot-close-button">
+                        <img class="close-image" src="static/images/close.png">
+                    </button>
+                </div>
+            </div>
+
+            <div class="chatbot-body">
+                <div class="fix"></div>
+            </div>
+            
+            <div class="chatbot-message-container">
+                    <form class="chatbot-message-form" onsubmit="return false">
+                        <input class="chatbot-message-input"type="text" maxlength="300" placeholder="Type your message here" required>
+                        <div class="chatbot-message-send"> 
+                            <button type='submit' class="chatbot-send-button">
+                                <img class="send-icon" src="static/images/send-message.png">
+                            </button>
+                        </div>
+                    </form>
+            </div>   
+       </div>
+
+    </main>
+
+    <script src="./static/scripts/main.js"></script>
+</body>
+</html>
